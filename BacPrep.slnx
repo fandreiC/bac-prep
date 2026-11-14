@@ -1,2 +1,14 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BacPrep.Api/BacPrep.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/BacPrep.Modules.Content/BacPrep.Modules.Content.csproj" />
+    <Project Path="src/Modules/BacPrep.Modules.Notifications/BacPrep.Modules.Notifications.csproj" />
+    <Project Path="src/Modules/BacPrep.Modules.Practice/BacPrep.Modules.Practice.csproj" />
+    <Project Path="src/Modules/BacPrep.Modules.Students/BacPrep.Modules.Students.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BacPrep.UnitTests/BacPrep.UnitTests.csproj" />
+  </Folder>
 </Solution>

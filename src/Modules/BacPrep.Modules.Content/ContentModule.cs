@@ -18,7 +18,9 @@ public static class ContentModule
 
         var connectionString = configuration.GetConnectionString("BacPrep") ?? throw new InvalidOperationException("Connection string 'BacPrep' is missing!");
 
-        services.AddDbContext<ContentDbContext>(options => options.UseSqlServer(connectionString));
+        services.AddDbContext<ContentDbContext>(options => options.UseSqlServer(connectionString, 
+                        sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "content")));
+        services.AddHealthChecks().AddDbContextCheck<ContentDbContext>("content-db");
         services.AddSingleton<InMemoryContentStore>();
         return services;
     }

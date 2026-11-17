@@ -10,6 +10,16 @@ public enum SessionType
     OfficialModel
 }
 
+public enum ExerciseType
+{
+    MultipleChoice,
+    Numeric,
+    ShortAnswer,
+    CodeOutput,
+    CodeWriting,
+    Essay
+}
+
 public sealed record DisciplineDto(int Id, string Name);
 
 public sealed record SyllabusDto(int Id, int DisciplineId, string Profile);

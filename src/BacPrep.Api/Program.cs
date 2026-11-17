@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.ConfigureHttpJsonOptions(options =>
     options.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-builder.Services.AddHealthChecks().AddDbContextCheck<ContentDbContext>();
+builder.Services.AddHealthChecks();
 
 builder.Services.AddContentModule(builder.Configuration);
 

@@ -10,6 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Modules\BacPrep.Modules.Content\BacPrep.Modules.Content.csproj" />
     <ProjectReference Include="..\Modules\BacPrep.Modules.Practice\BacPrep.Modules.Practice.csproj" />
     <ProjectReference Include="..\Modules\BacPrep.Modules.Students\BacPrep.Modules.Students.csproj" />

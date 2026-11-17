@@ -3,14 +3,22 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace BacPrep.Modules.Content;
 
 public static class ContentModule
 {
-    public static IServiceCollection AddContentModule(this IServiceCollection services)
+    public static IServiceCollection AddContentModule(this IServiceCollection services, IConfiguration configuration)
     {
         ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configuration);
+
+        var connectionString = configuration.GetConnectionString("BacPrep") ?? throw new InvalidOperationException("Connection string 'BacPrep' is missing!");
+
+        services.AddDbContext<ContentDbContext>(options => options.UseSqlServer(connectionString));
         services.AddSingleton<InMemoryContentStore>();
         return services;
     }

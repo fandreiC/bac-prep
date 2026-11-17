@@ -20,7 +20,8 @@ public static class ContentModule
         ArgumentNullException.ThrowIfNull(app);
         var group = app.MapGroup("").WithTags("Content");
 
-        group.MapGet("/disciplines", (InMemoryContentStore store) => store.Disciplines);
+        group.MapGet("/disciplines", (InMemoryContentStore store) => store.Disciplines)
+            .WithSummary("List all disciplines");
 
         group.MapGet("/disciplines/{id:int}/syllabi",
             Results<Ok<IReadOnlyList<SyllabusDto>>, NotFound> (int id, InMemoryContentStore store) =>
@@ -30,7 +31,7 @@ public static class ContentModule
                     return TypedResults.NotFound();
                 }
                 return TypedResults.Ok(store.GetSyllabi(id));
-            });
+            }).WithSummary("List the syllabi of a discipline");
 
         group.MapGet("/syllabi/{id:int}/tests",
             Results<Ok<IReadOnlyList<TestSummaryDto>>, NotFound> (int id, InMemoryContentStore store) =>
@@ -40,7 +41,7 @@ public static class ContentModule
                     return TypedResults.NotFound();
                 }
                 return TypedResults.Ok(store.GetTests(id));
-            });
+            }).WithSummary("List the tests of a syllabus");
 
         return app;
     }

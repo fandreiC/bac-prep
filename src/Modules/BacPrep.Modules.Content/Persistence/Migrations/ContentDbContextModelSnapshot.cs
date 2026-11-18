@@ -97,6 +97,23 @@ namespace BacPrep.Modules.Content.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Disciplines", "content");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Matematică"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Limba și literatura română"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Informatică"
+                        });
                 });
 
             modelBuilder.Entity("BacPrep.Modules.Content.Domain.Exercise", b =>
@@ -141,6 +158,170 @@ namespace BacPrep.Modules.Content.Persistence.Migrations
                     b.HasIndex("SectionId");
 
                     b.ToTable("Exercises", "content");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ExerciseType = "Numeric",
+                            Label = "1",
+                            MaxPoints = 5,
+                            SectionId = 1,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ExerciseType = "Numeric",
+                            Label = "2",
+                            MaxPoints = 5,
+                            SectionId = 1,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ExerciseType = "Numeric",
+                            Label = "3",
+                            MaxPoints = 5,
+                            SectionId = 1,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ExerciseType = "Numeric",
+                            Label = "4",
+                            MaxPoints = 5,
+                            SectionId = 1,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ExerciseType = "Numeric",
+                            Label = "5",
+                            MaxPoints = 5,
+                            SectionId = 1,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ExerciseType = "Numeric",
+                            Label = "6",
+                            MaxPoints = 5,
+                            SectionId = 1,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ExerciseType = "Numeric",
+                            Label = "1.a",
+                            MaxPoints = 5,
+                            SectionId = 2,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ExerciseType = "Numeric",
+                            Label = "1.b",
+                            MaxPoints = 5,
+                            SectionId = 2,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ExerciseType = "Numeric",
+                            Label = "1.c",
+                            MaxPoints = 5,
+                            SectionId = 2,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ExerciseType = "Numeric",
+                            Label = "2.a",
+                            MaxPoints = 5,
+                            SectionId = 2,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ExerciseType = "Numeric",
+                            Label = "2.b",
+                            MaxPoints = 5,
+                            SectionId = 2,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ExerciseType = "Numeric",
+                            Label = "2.c",
+                            MaxPoints = 5,
+                            SectionId = 2,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ExerciseType = "Numeric",
+                            Label = "1.a",
+                            MaxPoints = 5,
+                            SectionId = 3,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ExerciseType = "Numeric",
+                            Label = "1.b",
+                            MaxPoints = 5,
+                            SectionId = 3,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ExerciseType = "Numeric",
+                            Label = "1.c",
+                            MaxPoints = 5,
+                            SectionId = 3,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ExerciseType = "Numeric",
+                            Label = "2.a",
+                            MaxPoints = 5,
+                            SectionId = 3,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ExerciseType = "Numeric",
+                            Label = "2.b",
+                            MaxPoints = 5,
+                            SectionId = 3,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ExerciseType = "Numeric",
+                            Label = "2.c",
+                            MaxPoints = 5,
+                            SectionId = 3,
+                            Statement = "Enunțul va fi adăugat din subiectul oficial."
+                        });
                 });
 
             modelBuilder.Entity("BacPrep.Modules.Content.Domain.Profile", b =>
@@ -162,6 +343,38 @@ namespace BacPrep.Modules.Content.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Profiles", "content");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Mate-Info"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Științe ale naturii"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Tehnologic"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Pedagogic"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Real"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Uman"
+                        });
                 });
 
             modelBuilder.Entity("BacPrep.Modules.Content.Domain.Section", b =>
@@ -187,6 +400,29 @@ namespace BacPrep.Modules.Content.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Sections", "content");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            MaxPoints = 30,
+                            Number = 1,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            MaxPoints = 30,
+                            Number = 2,
+                            TestId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            MaxPoints = 30,
+                            Number = 3,
+                            TestId = 1
+                        });
                 });
 
             modelBuilder.Entity("BacPrep.Modules.Content.Domain.Syllabus", b =>
@@ -211,6 +447,56 @@ namespace BacPrep.Modules.Content.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Syllabi", "content");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DisciplineId = 1,
+                            ProfileId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DisciplineId = 1,
+                            ProfileId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DisciplineId = 1,
+                            ProfileId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DisciplineId = 1,
+                            ProfileId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DisciplineId = 2,
+                            ProfileId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DisciplineId = 2,
+                            ProfileId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DisciplineId = 3,
+                            ProfileId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DisciplineId = 3,
+                            ProfileId = 2
+                        });
                 });
 
             modelBuilder.Entity("BacPrep.Modules.Content.Domain.Test", b =>
@@ -250,6 +536,19 @@ namespace BacPrep.Modules.Content.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Tests", "content");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DurationMinutes = 180,
+                            GeneralNotes = "Se acordă 10 puncte din oficiu. Nota finală se calculează prin împărțirea la 10 a punctajului total.",
+                            IsReserve = false,
+                            SessionType = "Summer",
+                            SyllabusId = 1,
+                            Variant = 3,
+                            Year = 2026
+                        });
                 });
 
             modelBuilder.Entity("BacPrep.Modules.Content.Domain.BaremItem", b =>

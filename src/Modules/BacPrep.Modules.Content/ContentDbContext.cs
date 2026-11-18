@@ -1,4 +1,5 @@
 using BacPrep.Modules.Content.Domain;
+using BacPrep.Modules.Content.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace BacPrep.Modules.Content;
@@ -61,5 +62,7 @@ internal sealed class ContentDbContext(DbContextOptions<ContentDbContext> option
             e.Property(x => x.Group).HasMaxLength(50);
             e.Property(x => x.Description).HasMaxLength(1000);
         });
+        
+        ContentSeedData.Apply(modelBuilder);
     }
 }

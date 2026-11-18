@@ -106,6 +106,8 @@ ExerciseType values:
 - Confirm the profiles for Romanian and Informatics on subiecte.edu.ro.
 - Do Exercises link to the Theory a student needs (many-to-many)? v1 or later?
 - Syllabus versioning per year (ValidFromYear, chapters on/off per year): v2.
+- Profile isn’t one thing. For Math, the paper depends on the specialization (Mate-Info, Științe ale naturii…). For Romanian, it depends on the profile (Real, Uman), and “Real” covers Mate-Info and Științe ale naturii. Our Profile table currently mixes both levels. That’s fine for v1, but it’s a real modelling question, and the Romanian names still need checking on subiecte.edu.ro.
+- Math proofs. Many Subiectul II/III items say “Arătați că…” (“show that…”). There’s no numeric answer to check, so Numeric doesn’t fit them. Should ExerciseType get a Proof value that’s self-graded with the barem steps?
 
 ## Sources
 

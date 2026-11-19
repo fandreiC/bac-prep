@@ -9,6 +9,7 @@
     <Project Path="src/Modules/BacPrep.Modules.Students/BacPrep.Modules.Students.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/BacPrep.IntegrationTests/BacPrep.IntegrationTests.csproj" />
     <Project Path="tests/BacPrep.UnitTests/BacPrep.UnitTests.csproj" />
   </Folder>
 </Solution>

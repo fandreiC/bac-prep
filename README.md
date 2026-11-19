@@ -57,4 +57,27 @@ Key difficulties encountered by students:
 .NET 10, ASP.NET Core, EF Core, SQL Server, Docker, Azure
 
 ## How to run
- to be filled in later.
+
+### Prerequisites
+- .NET 10 SDK
+- Docker Desktop
+
+### First time
+```
+docker run -d --name bacprep-sql -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<password>" -p 1667:1433 -v bacprep-sqldata:/var/opt/mssql mcr.microsoft.com/mssql/server:2022-latest
+dotnet tool restore
+dotnet user-secrets set "ConnectionStrings:BacPrep" "Server=localhost,1667;Database=BacPrep;User Id=sa;Password=<password>;TrustServerCertificate=True" --project src/BacPrep.Api
+dotnet ef database update --project src/Modules/BacPrep.Modules.Content --startup-project src/BacPrep.Api --context ContentDbContext
+```
+
+### Every day
+```
+docker start bacprep-sql
+dotnet watch --project src/BacPrep.Api
+```
+API reference: http://localhost:5141/scalar · Health: http://localhost:5141/health
+
+### Tests
+```
+dotnet test
+```

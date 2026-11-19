@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="BacPrep.UnitTests" />
+  </ItemGroup>
+
 </Project>

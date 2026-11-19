@@ -45,6 +45,13 @@ internal sealed class Test
     public int DurationMinutes { get; set; }
     public string? GeneralNotes { get; set; }
     public ICollection<Section> Sections { get; } = [];
+    public const int TotalPoints = 90;
+
+    public bool PointsAreConsistent() => 
+        Sections.Sum(s=>s.MaxPoints) == TotalPoints
+        && Sections.All(s=>s.Exercises.Sum(e=>e.MaxPoints) == s.MaxPoints)
+        && Sections.SelectMany(s=>s.Exercises)
+            .All(e=>e.BaremItems.Count == 0 || e.BaremItems.Sum(b=>b.MaxPoints) == e.MaxPoints);
 }
 
 internal sealed class Section
